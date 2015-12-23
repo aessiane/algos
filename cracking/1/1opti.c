@@ -7,15 +7,15 @@
 
 int		func(char * const str)
 {
-  char		map[256] = {0};
+  int		map[8] = {0};
 
   if (!str || !(*str))
     return (UNIQUE);
   for (int i = 0; str[i]; ++i)
     {
-      if (map[str[i]])
+      if (map[str[i] / 32] & (1 << (str[i] % 32)))
 	return (NOT_UNIQUE);
-      map[str[i]] = 1;
+      map[str[i] / 32] |= 1 << (str[i] % 32);
     }
   return (UNIQUE);
 }
