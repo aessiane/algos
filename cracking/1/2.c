@@ -28,6 +28,8 @@ void		reverse(char * const str)
 
 int		main(int ac, char **av)
 {
+  if (ac != 2)
+    return (1);
   reverse(av[1]);
   printf("%s\n", av[1]);
   return (0);

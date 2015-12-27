@@ -22,6 +22,8 @@ int		func(char * const str)
 
 int		main(int ac, char **av)
 {
+  if (ac != 2)
+    return (1);
   printf("%s\n", func(av[1]) ? "UNIQUE" : "NOT UNIQUE");
   return (0);
 }
